@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+	<script src="js/main.js"></script></div>
+	<link rel="stylesheet" href="css/style.css">
+	<title>BREEDING HAMSTERS GAME</title>
+</head>
+
+<body>
+<div class="container">
+	<h2 style="text-align: center; margin-top:3%"> BREEDING HAMSTERS GAME </h2>
+	<h4 id="time" style="text-align: center"></h4>
+	<h4 id="days" style="text-align: center">Days: 1</h4>
+	<h3 id="levels" style="text-align: center">Level: 1</h3>
+	<br>
+	<div class="resources">
+		<div id="money">Your money: $</div>
+		<div id="adult-hamsters">Your grown hamsters: 1</div>
+		<div id="child-hamsters">Your little hamsters: 0</div>
+		<div id="food">Hamsters food: 0 packs</div>
+	</div>
+
+	<div class="messeges">
+		<ul class="list-group list-group-flush" id="mess">
+		  <li class="list-group-item">You start to play</li>
+		  	<a id="myImg" class="liCall"></a>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			  <img class="modal-content" id="img01">
+			  <div id="caption"></div>
+			  <button id="answers1" class="answBtn">yes</button>
+			  <button id="answers2">no</button></div>
+			</div>
+		</ul>
+
+
+	<div class="groupButtonsA">
+		<button type="button" class="btn btn-outline-info btnA" onclick="buyHamster()">Buy a hamster <span class="price">(-20$)</span></button>
+		<button type="button" class="btn btn-outline-info btnA" onclick="sellHamster()">Sell ​​a hamster <span class="price">(+5$)</span></button>
+	</div>
+
+	<div class="groupButtonsB">
+		<button id="birth1" type="button" class="btn btn-outline-info btnB" onclick="birthOneHamsters()">Give birth to 1 hamster <span class="price">(-2 packs)</span></button>
+		<button id="birth3" type="button" class="btn btn-outline-info btnB" onclick="birthThreeHamsters()">Give birth to 3 hamsters  <span class="price">(-4 packs)</span></button>
+		<button id="birth6" type="button" class="btn btn-outline-info btnB" onclick="birthSixHamsters()">Give birth to 6 hamsters <span class="price">(-6 packs)</span></button>
+	</div>
+
+	<div class="groupButtonsC">
+		<button type="button" class="btn btn-outline-info btnC" onclick="buyFood()">Buy food <span class="price">(-10$)</span></button>
+		<button type="button" class="btn btn-outline-info btnC" onclick="giveFood()">
+		Feed one little hamster <span class="price">(-2 pack)</span></button>
+		<button type="button" class="btn btn-outline-info btnC" onclick="saveGame()">
+		Save the game</span></button>
+	</div>
+
+	<button type="button" class="btn btn-outline-info btnC" onclick="MONEY()">MORE MONEY</span></button>
+	<button type="button" class="btn btn-outline-info btnC" onclick="upUp()">MORE LEVELS</span></button>
+
+<div class="tab">
+  <button class="tablinks" onclick="openMenu(event, 'hamsterInCell')" id="defaultOpen">My Hamster</button>
+  <button class="tablinks" onclick="openMenu(event, 'mansFeelings')">I am</button>
+</div>
+
+<div id="hamsterInCell" class="tabcontent">
+  <div id="firstCanvas">
+  	<button type="button" class="btn btn-outline-info btnD1" onclick="giveFood()">
+		Feed one little hamster <span class="price">(-2 pack)</span></button>
+	<button type="button" class="btn btn-outline-info btnD" onclick="buyFood()">Buy food <span class="price">(-10$)</span></button>
+    <canvas id="myFirstCanvas" width="1010" height="350" class="cnv">
+	<img id="hams1" width="1010" height="400" src="img/hamster13.png" >
+	<img id="hams2" width="1010" height="400" src="img/hamster14.png" >
+	</canvas>
+	</div>
+</div>
+
+<div id="mansFeelings" class="tabcontent">
+	<img src="scales/10.png" height="310px" width="50px" style="margin-left: 15px">
+	<p style="position:absolute"> happiness</p>
+<img src="" id="image1" onclick="callToFriend1()">
+<img src="" id="image2" onclick="callToFriend2()">
+<img src="" id="image3" onclick="callToFriend3()">
+<img src="" id="image4" onclick="callToFriend4()">
+	<button class="menuCall" id="menuCall1">1</button>
+	<button class="menuCall popup" id="menuCall2">2</button>
+	<button class="menuCall" id="menuCall3">3</button>
+	<button class="menuCall" id="menuCall4">4</button>
+</div>
+
+<script>
+//tab
+function openMenu(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
+
+//canvas
+window.onload = function() {
+  var c1 = document.getElementById("myFirstCanvas");
+  var ctx1 = c1.getContext("2d");
+
+  function imgTime1(){
+  	var img1 = document.getElementById("hams1");
+  ctx1.drawImage(img1, 0, 0);
+  }setInterval(imgTime1, 2000);
+
+  function imgTime2(){
+  	var img2 = document.getElementById("hams2");
+  ctx1.drawImage(img2, 0, 0);
+  }setInterval(imgTime2, 3000);
+}
+
+
+//friends
+function newFriends(){
+var imgs1=[
+"img/a3.png",//1
+"img/c4.png"];//2
+
+var imgs2=[
+"img/d2.png",//3
+"img/b4.png"];//4
+
+var imgs3=[
+"img/f2.png",//5
+"img/h2.png"];//6
+
+var imgs4=[
+"img/g2.png",//7
+"img/e2.png"];//8
+
+image1.style.height="190px";
+image1=document.getElementById('image1');
+image2.style.height="190px";
+image2=document.getElementById('image2');
+image3.style.height="190px";
+image3=document.getElementById('image3');
+image4.style.height="190px";
+image4=document.getElementById('image4');
+
+
+image1.src=imgs1[Math.floor(Math.random()*imgs1.length)];
+image2.src=imgs2[Math.floor(Math.random()*imgs2.length)];
+image3.src=imgs3[Math.floor(Math.random()*imgs3.length)];
+image4.src=imgs4[Math.floor(Math.random()*imgs4.length)];
+}
+newFriends();
+</script>
+</div>
+</body>
+</html>
