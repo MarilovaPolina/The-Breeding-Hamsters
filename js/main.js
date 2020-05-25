@@ -251,49 +251,256 @@ function upUp(){
 		}
 	}
 
-//friends	
+//friend 1
 	function callToFriend1(){
-		if(menuCall1.style.display == 'block') {
-       menuCall1.style.display = 'none';
+		var menuOfHappy1=document.getElementById("menuCall1");
+		var menuOfHappy2=document.getElementById("menuCall2");
+		var menuOfHappy3=document.getElementById("menuCall3");
+		var menuOfHappy4=document.getElementById("menuCall4");
+		if(menuOfHappy1.style.display == 'block') {
+      		menuOfHappy1.style.display = 'none';
 	    }
 	    else {
-	      menuCall1.style.display = 'block';
+	      menuOfHappy1.style.display = 'block';
+
+		    if(menuOfHappy2.style.display == 'block') {
+	      		menuOfHappy2.style.display = 'none';
+		    	}
+		    if(menuOfHappy3.style.display == 'block') {
+	      		menuOfHappy3.style.display = 'none';
+		    	}
+		    if(menuOfHappy4.style.display == 'block') {
+	      		menuOfHappy4.style.display = 'none';
+		    	}
+		}
+	}
+
+	function closeOnCross1(){
+		var menuOfHappy1=document.getElementById("menuCall1");
+		if(menuOfHappy1.style.display == 'block') {
+      		menuOfHappy1.style.display = 'none';
 	    }
 	}
 
-		function callToFriend2(){
-			const popup = document.querySelector('.pop-up');
 
-			document.onclick = function(e){
-    		if ( menuCall2.target.className != 'pop-up' ) {
-       		 popup.style.display = 'none';
-    		};
-		};
 
-		if(menuCall2.style.display == 'block') {
-       menuCall2.style.display = 'none';
+//friend 2
+	function callToFriend2(){
+		var menuOfHappy1=document.getElementById("menuCall1");
+		var menuOfHappy2=document.getElementById("menuCall2");
+		var menuOfHappy3=document.getElementById("menuCall3");
+		var menuOfHappy4=document.getElementById("menuCall4");
+		if(menuOfHappy2.style.display == 'block') {
+      		menuOfHappy2.style.display = 'none';
 	    }
 	    else {
-	      menuCall2.style.display = 'block';
+	      menuOfHappy2.style.display = 'block';
+
+		    if(menuOfHappy1.style.display == 'block') {
+	      		menuOfHappy1.style.display = 'none';
+		    	}
+		    if(menuOfHappy3.style.display == 'block') {
+	      		menuOfHappy3.style.display = 'none';
+		    	}
+		    if(menuOfHappy4.style.display == 'block') {
+	      		menuOfHappy4.style.display = 'none';
+		    	}
+		}
+	}
+
+	function closeOnCross2(){
+		var menuOfHappy2=document.getElementById("menuCall2");
+		if(menuOfHappy2.style.display == 'block') {
+      		menuOfHappy2.style.display = 'none';
 	    }
 	}
 
+//friend 3
 		function callToFriend3(){
-		if(menuCall3.style.display == 'block') {
-       menuCall3.style.display = 'none';
+		var menuOfHappy1=document.getElementById("menuCall1");
+		var menuOfHappy2=document.getElementById("menuCall2");
+		var menuOfHappy3=document.getElementById("menuCall3");
+		var menuOfHappy4=document.getElementById("menuCall4");
+		if(menuOfHappy3.style.display == 'block') {
+      		menuOfHappy3.style.display = 'none';
 	    }
 	    else {
-	      menuCall3.style.display = 'block';
+	      menuOfHappy3.style.display = 'block';
+
+		    if(menuOfHappy1.style.display == 'block') {
+	      		menuOfHappy1.style.display = 'none';
+		    	}
+		    if(menuOfHappy2.style.display == 'block') {
+	      		menuOfHappy2.style.display = 'none';
+		    	}
+		    if(menuOfHappy4.style.display == 'block') {
+	      		menuOfHappy4.style.display = 'none';
+		    	}
+		}
+	}
+
+	function closeOnCross3(){
+		var menuOfHappy3=document.getElementById("menuCall3");
+		if(menuOfHappy3.style.display == 'block') {
+      		menuOfHappy3.style.display = 'none';
 	    }
 	}
 
-		function callToFriend4(){
-		if(menuCall4.style.display == 'block') {
-       menuCall4.style.display = 'none';
+//friend 4
+	function callToFriend4(){
+		var menuOfHappy1=document.getElementById("menuCall1");
+		var menuOfHappy2=document.getElementById("menuCall2");
+		var menuOfHappy3=document.getElementById("menuCall3");
+		var menuOfHappy4=document.getElementById("menuCall4");
+		if(menuOfHappy4.style.display == 'block') {
+      		menuOfHappy4.style.display = 'none';
 	    }
 	    else {
-	      menuCall4.style.display = 'block';
+	      menuOfHappy4.style.display = 'block';
+
+		    if(menuOfHappy1.style.display == 'block') {
+	      		menuOfHappy1.style.display = 'none';
+		    	}
+		    if(menuOfHappy2.style.display == 'block') {
+	      		menuOfHappy2.style.display = 'none';
+		    	}
+		    if(menuOfHappy3.style.display == 'block') {
+	      		menuOfHappy3.style.display = 'none';
+		    	}
+		}
+	}
+
+	function closeOnCross4(){
+		var menuOfHappy4=document.getElementById("menuCall4");
+		if(menuOfHappy4.style.display == 'block') {
+      		menuOfHappy4.style.display = 'none';
 	    }
 	}
 
+//happiness
+	var numberOfHappy;
+	var mood =11;
+	happiness();
+	function happiness(){
+		mood-=1;
+		if (mood<1){
+			alert('-50$');
+			mood+=10;
+			numberOfHappy = setTimeout(happiness, 5000);
+	}
+		else {
+		numberOfHappy = setTimeout(happiness, 5000);
+		}
+		document.getElementById('happy').innerHTML = mood;
+		document.getElementById('happy1').innerHTML = mood;
+
+		if (mood!=0) {
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}	
+	}
 	
+	function upMood1(){
+		if(mood<=9){
+			mood+=1;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood2(){
+		if(mood<=7){
+			mood+=2;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+2)-((mood+2)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood4(){
+		if(mood<=5){
+			mood+=4;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+4)-((mood+4)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood5(){
+		if(mood<=4){
+			mood+=5;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+5)-((mood+5)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood6(){
+		if(mood<=3){
+			mood+=6;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+6)-((mood+6)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood7(){
+		if(mood<=2){
+			mood+=7;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+7)-((mood+7)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+
+	function upMood9(){
+		if(mood<=0){
+			mood+=9;
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+
+		else{
+			mood=(mood+9)-((mood+9)-10);
+			document.getElementById('happy').innerHTML = mood;
+			document.getElementById('happy1').innerHTML = mood;
+			document.getElementById("scale").innerHTML=("<img src='"+"scales/"+mood+".png' "+" class='scaleStyle' "+"'>");
+		}
+	}
+

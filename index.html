@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div id="all">
 <div class="container">
 	<h2 style="text-align: center; margin-top:3%"> BREEDING HAMSTERS GAME </h2>
 	<h4 id="time" style="text-align: center"></h4>
@@ -18,10 +19,11 @@
 	<h3 id="levels" style="text-align: center">Level: 1</h3>
 	<br>
 	<div class="resources">
-		<div id="money">Your money: $</div>
+		<div id="money">Your money: 0$</div>
 		<div id="adult-hamsters">Your grown hamsters: 1</div>
 		<div id="child-hamsters">Your little hamsters: 0</div>
 		<div id="food">Hamsters food: 0 packs</div>
+		<div>Happiness: <div id="happy" style="display:inline">10</div></div>
 	</div>
 
 	<div class="messeges">
@@ -79,18 +81,78 @@
 </div>
 
 <div id="mansFeelings" class="tabcontent">
-	<img src="scales/10.png" height="310px" width="50px" style="margin-left: 15px">
-	<p style="position:absolute"> happiness</p>
-<img src="" id="image1" onclick="callToFriend1()">
-<img src="" id="image2" onclick="callToFriend2()">
-<img src="" id="image3" onclick="callToFriend3()">
-<img src="" id="image4" onclick="callToFriend4()">
-	<button class="menuCall" id="menuCall1">1</button>
-	<button class="menuCall popup" id="menuCall2">2</button>
-	<button class="menuCall" id="menuCall3">3</button>
-	<button class="menuCall" id="menuCall4">4</button>
-</div>
+	<div id="scale"><img src="scales/10.png" class='scaleStyle'></div>
+	<div id="happy1">10</div>
 
+	<div class="picturesPeople">
+		<img src="" id="image1" onclick="callToFriend1()">
+		<img src="" id="image2" onclick="callToFriend2()">
+		<img src="" id="image3" onclick="callToFriend3()">
+		<img src="" id="image4" onclick="callToFriend4()">
+			<div id="menuCall1" class="menuOfHappy">
+				<p>friend 1: <div id="friendship1"></div></p>
+				<h1 class="cross" onclick="closeOnCross1()">×</h1>
+				<h2 class="nameOfMenu">Invite</h2>
+				<div class="groupButtonsD">
+					<button onclick="upMood1()" class="btn btn-outline-info">Call</button>
+					<button onclick="upMood2()" class="btn btn-outline-info">Walk</button>
+					<button onclick="upMood4()" class="btn btn-outline-info">Visit</button>
+					<button onclick="upMood5()" class="btn btn-outline-info">Go to the party</button>
+					<button onclick="upMood6()" class="btn btn-outline-info">Go to the aquapark</button>
+					<button onclick="upMood7()" class="btn btn-outline-info">Go to the cafe</button>
+					<button onclick="upMood9()" class="btn btn-outline-info">Go to a neighboring city</button>
+				</div>
+			</div>
+
+			<div id="menuCall2" class="menuOfHappy" style="border:20px solid #94c6d4;border-top:50px solid #94c6d4;">
+				<h1 class="cross" onclick="closeOnCross2()">×</h1>
+				<h2 class="nameOfMenu">Invite</h2>
+				<div class="groupButtonsD">
+					<button onclick="upMood1()" class="btn btn-outline-info">Call</button>
+					<button onclick="upMood2()" class="btn btn-outline-info">Walk</button>
+					<button onclick="upMood4()" class="btn btn-outline-info">Visit</button>
+					<button onclick="upMood5()" class="btn btn-outline-info">Go to the party</button>
+					<button onclick="upMood6()" class="btn btn-outline-info">Go to the aquapark</button>
+					<button onclick="upMood7()" class="btn btn-outline-info">Go to the cafe</button>
+					<button onclick="upMood9()" class="btn btn-outline-info">Go to a neighboring city</button>
+				</div>
+			</div>
+
+			<div id="menuCall3" class="menuOfHappy" style="border:20px solid #c594d4;border-top:50px solid #c594d4;">
+				<h1 class="cross" onclick="closeOnCross3()">×</h1>
+				<h2 class="nameOfMenu">Invite</h2>
+				<div class="groupButtonsD">
+					<button onclick="upMood1()" class="btn btn-outline-info">Call</button>
+					<button onclick="upMood2()" class="btn btn-outline-info">Walk</button>
+					<button onclick="upMood4()" class="btn btn-outline-info">Visit</button>
+					<button onclick="upMood5()" class="btn btn-outline-info">Go to the party</button>
+					<button onclick="upMood6()" class="btn btn-outline-info">Go to the aquapark</button>
+					<button onclick="upMood7()" class="btn btn-outline-info">Go to the cafe</button>
+					<button onclick="upMood9()" class="btn btn-outline-info">Go to a neighboring city</button>
+				</div>
+			</div>
+
+			<div id="menuCall4" class="menuOfHappy" style="border:20px solid #95baa3;border-top:50px solid #95baa3;">
+				<h1 class="cross" onclick="closeOnCross4()">×</h1>
+				<h2 class="nameOfMenu">Invite</h2>
+				<div class="groupButtonsD">
+					<button onclick="upMood1()" class="btn btn-outline-info">Call</button>
+					<button onclick="upMood2()" class="btn btn-outline-info">Walk</button>
+					<button onclick="upMood4()" class="btn btn-outline-info">Visit</button>
+					<button onclick="upMood5()" class="btn btn-outline-info">Go to the party</button>
+					<button onclick="upMood6()" class="btn btn-outline-info">Go to the aquapark</button>
+					<button onclick="upMood7()" class="btn btn-outline-info">Go to the cafe</button>
+					<button onclick="upMood9()" class="btn btn-outline-info">Go to a neighboring city</button>
+				</div>
+			</div>
+
+			
+			<p>friend 2: <div id="friendship2"></div></p>
+	</div>
+</div>
+</div>
+</div>
+</div>
 <script>
 //tab
 function openMenu(evt, cityName) {
@@ -135,23 +197,24 @@ var imgs1=[
 
 var imgs2=[
 "img/d2.png",//3
-"img/b4.png"];//4
+"img/b4.png",//4
+"img/m4.png"];//5
 
 var imgs3=[
-"img/f2.png",//5
-"img/h2.png"];//6
+"img/f2.png",//6
+"img/h2.png"];//7
 
 var imgs4=[
-"img/g2.png",//7
-"img/e2.png"];//8
+"img/g2.png",//8
+"img/e2.png"];//9
 
-image1.style.height="190px";
+image1.style.height="200px";
 image1=document.getElementById('image1');
-image2.style.height="190px";
+image2.style.height="200px";
 image2=document.getElementById('image2');
-image3.style.height="190px";
+image3.style.height="200px";
 image3=document.getElementById('image3');
-image4.style.height="190px";
+image4.style.height="200px";
 image4=document.getElementById('image4');
 
 
